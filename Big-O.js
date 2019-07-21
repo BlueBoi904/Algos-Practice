@@ -1,6 +1,7 @@
 const { performance } = require('perf_hooks');
 
-const nemo = ['nemo'];
+const everyone = ['nigel','dory','bruce','marlin','squrit','darla','hank','nemo','gill'];
+const large = new Array(100).fill('nemo');
 
 function findNemo(array) {
     let t0 = performance.now();
@@ -13,4 +14,5 @@ function findNemo(array) {
     console.log('Call to find Nemo took ' + (t1 - t0) + ' milliseconds');
 }
 
-findNemo(nemo);
+
+findNemo(large);
