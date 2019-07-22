@@ -15,3 +15,17 @@ strings.unshift('x'); //O(n)
 strings.splice(2,0,'alien'); //O(n)
 
 console.log(strings)
+
+//Arrays Pros and Cons
+
+/*
+Pros:
+Fast lookups
+Fast push/pop
+Ordered
+
+Cons:
+Slow inserts
+Slow deletes
+Fixed size
+*/

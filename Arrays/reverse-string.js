@@ -43,7 +43,7 @@ function reversePointers(str){
     return str;
 }
 
-myString = 'Hello my name is Ben'
+myString = 'Hello my name is Bens'
 
  reverse(myString);
 
