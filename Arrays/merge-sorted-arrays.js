@@ -69,4 +69,4 @@ function mergeSortedArrays(array1, array2){
     }
     return mergedArray;
   }
-  
+
