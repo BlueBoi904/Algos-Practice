@@ -55,7 +55,7 @@ class LinkedList {
   //   }
   //   // Insert at this location, this value
   //   const newNode = new Node(value);
-    
+
   //   //value points to the value at index, previous value.next points to value
   //   let prevNode = null;
   //   let currentNode = this.head;
@@ -73,17 +73,17 @@ class LinkedList {
   //   }
   //   return this;
   // }
-  insert(index, value){
+  insert(index, value) {
     //Check for proper parameters;
-    if(index >= this.length) {
+    if (index >= this.length) {
       return this.append(value);
     }
-    
+
     const newNode = {
       value: value,
       next: null
-    }
-    const leader = this.traverseToIndex(index-1);
+    };
+    const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
     leader.next = newNode;
     newNode.next = holdingPointer;
@@ -94,15 +94,15 @@ class LinkedList {
     //Check parameters
     let counter = 0;
     let currentNode = this.head;
-    while(counter !== index){
+    while (counter !== index) {
       currentNode = currentNode.next;
       counter++;
     }
     return currentNode;
   }
   remove(index) {
-    // Check Parameters      
-    const leader = this.traverseToIndex(index-1);
+    // Check Parameters
+    const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
     this.length--;
@@ -119,16 +119,28 @@ class LinkedList {
     console.log(arr);
     return arr;
   }
-  z
 
+  reverse() {
+    let prev = null;
+    let currentNode = this.head;
+    while (currentNode) {
+      let temp = currentNode.next;
+      currentNode.next = prev;
+      prev = currentNode;
+      currentNode = temp;
+    }
+    this.head = prev;
+    return this.head;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-myLinkedList.insert(2,99);
-myLinkedList.insert(20,88);
+myLinkedList.insert(2, 99);
+myLinkedList.insert(20, 88);
 myLinkedList.remove(3);
 myLinkedList.printList();
-console.log(1 + 'hey')
+myLinkedList.reverse();
+myLinkedList.printList();
